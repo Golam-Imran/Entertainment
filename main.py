@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import requests
 from PIL import Image
+import pandas as pd
 from streamlit_option_menu import option_menu
 
 selected = option_menu(
@@ -39,9 +40,10 @@ if selected == "Movie":
         return recommended_movie_names, recommended_movie_posters, recommended_movie_title
 
 
-    movies = pickle.load(open('movie_list.pkl', 'rb'))
+    #movies = pickle.load(open('m_list.pkl', 'rb'))
+    movies = pd.read_pickle("m_list.pkl")
     movie_list = movies['title'].values
-    similarity = pickle.load(open('similarity.pkl', 'rb'))
+    similarity = pickle.load(open('s_.pkl', 'rb'))
     image2 = Image.open('mrt.jpg')
 
     # Here The Website Begin
