@@ -41,9 +41,10 @@ if selected == "Movie":
 
 
     #movies = pickle.load(open('m_list.pkl', 'rb'))
-    movies = pd.read_pickle("m_list.pkl")
+    movies = pd.read_pickle("movie_list.pkl")
     movie_list = movies['title'].values
-    similarity = pickle.load(open('s_.pkl', 'rb'))
+    #similarity = pickle.load(open('similarity.pkl', 'rb'))
+    similarity = pd.read_pickle("similarity.pkl")
     image2 = Image.open('mrt.jpg')
 
     # Here The Website Begin
