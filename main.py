@@ -99,10 +99,14 @@ if selected == "Books":
         return data
 
 
-    pt = pickle.load(open('pt.pkl', 'rb'))
-    books = pickle.load(open('books.pkl', 'rb'))
-    book_list = pickle.load(open('book_title.pkl', 'rb'))
-    similarity_scores = pickle.load(open('similarity_scores.pkl', 'rb'))
+    #pt = pickle.load(open('pt.pkl', 'rb'))
+    pt = pd.read_pickle("pt.pkl")
+    #books = pickle.load(open('books.pkl', 'rb'))
+    books = pd.read_pickle("books.pkl")
+    #book_list = pickle.load(open('book_title.pkl', 'rb'))
+    book_list = pd.read_pickle("book_title.pkl")
+    #similarity_scores = pickle.load(open('similarity_scores.pkl', 'rb'))
+    similarity_scores = pd.read_pickle("similarity_scores.pkl")
     image1 = Image.open('brt.jpg')
 
     # Here The Website Begin
